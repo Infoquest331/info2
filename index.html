@@ -1,0 +1,61 @@
+
+<!DOCTYPE html>
+<html lang="it">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Pagina informativa</title>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      text-align: center;
+      margin: 0;
+      padding: 70px 20px;
+      background: #f4f6f8;
+    }
+    button {
+      padding: 16px 24px;
+      font-size: 18px;
+      border: 0;
+      border-radius: 10px;
+      background: #1769e0;
+      color: white;
+      cursor: pointer;
+    }
+    img {
+      display: block;
+      max-width: 100%;
+      width: 450px;
+      margin: 25px auto;
+      border-radius: 12px;
+    }
+    #sorpresa { display: none; }
+  </style>
+</head>
+<body>
+  <h1>Pagina informativa</h1>
+  <p>Premi qui per visualizzare il contenuto.</p>
+
+  <button id="apri">Visualizza la soluzione</button>
+
+  <div id="sorpresa">
+    <h2>suca</h2>
+    <img src="scimmia.jpg" alt="Scimmia">
+    <audio id="suono" src="audio.mp3" controls loop></audio>
+  </div>
+
+  <script>
+    document.getElementById("apri").addEventListener("click", async () => {
+      document.getElementById("sorpresa").style.display = "block";
+      document.getElementById("apri").style.display = "none";
+
+      const audio = document.getElementById("suono");
+      try {
+        await audio.play();
+      } catch {
+        audio.controls = true;
+      }
+    });
+  </script>
+</body>
+</html>
